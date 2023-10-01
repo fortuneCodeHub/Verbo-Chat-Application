@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    overflow-x: hidden;
+    background-color: rgb(238, 238, 238);
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --scroll: 0;
+}
+.nav-fixed {
+    position: fixed;
+    top: 0%;
+    z-index: 2;
+    /* (oldVal - oldMin) * newRange / oldRange + newMin */
+    --wvalue: min(var(--scroll), 20) * (50 / 20);
+    width: calc(50% + (1% * var(--wvalue)));
+}
+.navbar-brand .navbar-brand-link {
+    text-decoration: none;
+    color: green;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar-btn {
+    border: none;
+    background-color: transparent;
+}
+.navbar-btn:hover i {
+    color: green;
+}
+.navbar-brand .navbar-brand-link:hover {
+    color: green;
+}
+.list-link {
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.list-link:hover {
+    color: white;
+    background-color: green;
+    border: 1px solid green;
+}
+.new-right {
+    display: none;
+}
+.offcanvas-collapse {
+    position: fixed;
+    top: 10%; /* Height of navbar */
+    left: 100%;
+    width: 55%;
+    margin: auto;
+    z-index: 4;
+    padding-right: 1rem;
+    padding-left: 0.55rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: white;
+    border-radius: 10px;
+    transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+}
+.offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(-100%);
+}
+.top-section {
+    height: 120vh;
+    display: flex;
+    position: sticky;
+    overflow-x: hidden;
+    top: 0;
+    /* (oldVal - oldMin) * newRange / oldRange + newMin */
+    translate: 0 calc(-1% * (max(var(--scroll), 15) - 15) * 100 / 85);
+    --background-opacity: calc(-1% * (min(var(--scroll), 20) - 20) * 100 / 80);
+}
+.right {
+    background-color: rgb(179, 179, 179, var(--background-opacity));
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 150px;
+}
+.right > .login-card {
+    width: 70%;
+    margin: auto;
+    position: absolute;
+    background-color: white;
+    padding: 50px 10px;
+    border-radius: 10px;
+    translate: calc(1% * (max(var(--scroll), 10) - 10) * 100 / 90) calc(-1% * (max(var(--scroll), 10) - 10) * 100 / 90);
+}
+.right > .login-card h3 {
+    font-size: 20px;
+}
+.right > .login-card h3 a {
+    color: green;
+    text-decoration: none;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.right > .login-card .join-group {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 15px 30px;
+    position: relative;
+}
+.right > .login-card .join-group .input {
+    outline: 1px solid white;
+    border: 1px solid white;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+.right > .login-card .join-group .label {
+    position: absolute;
+    font-size: 12px;
+    top: 85%;
+    transition: all 10ms ease-in-out;
+}
+.right > .login-card .join-group .label.active {
+    top: 10%;
+    left: 10%;
+    z-index: 2;
+    background-color: white;
+    padding: 1px 10px;
+}
+.right > .login-card .join-group .input.active {
+    outline: 1px solid green;
+    border-bottom: none;
+    z-index: 1;
+}
+.right > .login-card .button-bg {
+    padding: 25px 30px;
+
+}
+.right > .login-card .button-bg button {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid green;
+    color: white;
+    background-color: green;
+}
+.left {
+    background-color: rgb(255, 255, 255, var(--background-opacity));
+    color: black;
+    width: 50%;
+    height: 100%;
+}
+.inner-text  {
+    margin: 150px 20px;
+}
+.cta-area {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+}
+.cta-link {
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    padding: 20px 30px;
+    border: 1px solid green;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+.cta-link:hover {
+    color: white;
+}
+.images > * { /* This helps to select every single child element in the images div */
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: 10;
+    translate: 0 100%;
+    transition: translate 250ms ease-in-out;
+}
+.images > .show {
+    translate: 0 0;
+}
+.images > .top-section-img {
+    /* (oldVal - oldMin) * newRange / oldRange + newMin */
+    --value: min(var(--scroll), 30) * 50 / 30;
+    --tvalue: min(var(--scroll), 30) * 100 / 40;
+    --hvalue: min(var(--scroll), 10) * 20 / 10;
+    width: calc(50vw + (1vw * var(--value)));
+    transform: translateY(calc(100% - (1% * var(--tvalue))));
+    height: calc(30vh + (1vh * var(--hvalue)));
+    object-fit: contain;
+}
+[data-img-to-show] {
+    position: absolute;
+    top: 20%;
+}
+h1 {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 22px;
+    font-weight: 500;
+}
+.full-main-section {
+    background-color: rgb(238, 238, 238);
+    text-align: center;
+    height: 100vh;
+    position: relative;
+}
+.first-main-section {
+    padding: 5vh;
+}
+.inner-text2 {
+    margin: 100px 20px;
+}
+@media (max-width: 991px) {
+    .top-section {
+        flex-direction: column;
+        margin-bottom: 20px;
+        height: 90vh;
+        overflow: hidden;
+        translate: 0 calc(-1% * (max(var(--scroll), 10) - 10) * 100 / 90);
+        --background-opacity: calc(-1% * (min(var(--scroll), 15) - 15) * 100 / 85);
+    }
+    .nav-fixed {
+        width: 100%;
+    }
+    .new-right {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+    }
+    .cta-area {
+        justify-content: center;
+    }
+    .new-right img {
+        visibility: hidden;
+        transition: all 1s ease-in-out;
+    }
+    .new-right.move img {
+        animation: move-right-2;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+        visibility: visible;
+    } 
+    .right {
+        display: none;
+    }
+    .left {
+        height: 100%;
+        width: 100%;
+    }
+    .inner-text {
+        margin: 100px 20px;
+        padding: 10px 30px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    p {
+        font-size: 19px;
+    }
+}
+@media (max-width: 451px) {
+    .top-section {
+        height: 70vh;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .left {
+        width: 100%;  
+    }
+    .inner-text {
+        margin: 50px 20px;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 16px;
+    }
+}
+/*
+    Split section
+ */
+.split-section {
+    padding: 10px;
+    padding-bottom: 50px;
+    height: 70vh;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+}
+.split-section2 {
+    padding: 50px 10px;
+    height: 70vh;
+    margin-bottom: 50px;
+    overflow-x: hidden;
+}
+.text-section-bg {
+    padding: 10px;
+    transition: all 1s ease-in-out;
+    visibility: hidden;
+}
+.text-section-bg h2 {
+    font-size: 50px;
+    font-weight: 600;
+}
+.text-section-bg p {
+    font-size: 21px;
+    font-weight: 500;
+}
+@media (max-width: 600px) {
+    .split-section {
+        margin-bottom: 75px;
+    }
+    .split-section2 {
+        margin-bottom: 75px;
+    }
+    .text-section-bg h2 {
+        font-size: 36px;
+    }
+    .text-section-bg p {
+        font-size: 16px;
+    }
+}
+.image-section-bg {
+    transition: all 1s ease-in-out;
+    visibility: hidden;
+}
+.split-section .text-section-bg.move {
+    animation-name: move-right;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    visibility: visible;
+}
+.split-section .image-section-bg.move {
+    animation: move-left;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    visibility: visible;
+}
+.split-section2 .text-section-bg.move {
+    animation-name: move-left;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    visibility: visible;
+}
+.split-section2 .image-section-bg.move {
+    animation: move-right;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    visibility: visible;
+}
+@keyframes move-right {
+    0% {
+        transform: translateX(-100%);
+    } 
+    50% {
+        transform: translateX(0%);
+    }
+    51% {
+        transform: translateX(-5%)
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    81% {
+        transform: translateX(-2%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes move-left {
+    0% {
+        transform: translateX(100%);
+    } 
+    50% {
+        transform: translateX(0%);
+    }
+    51% {
+        transform: translateX(5%)
+    }
+    90% {
+        transform: translateX(0%);
+    }
+    91% {
+        transform: translateX(2%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes move-right-2 {
+    0% {
+        transform: translateX(780px);
+    } 
+    100%{
+        transform: translateX(0px);
+    }
+}
+/* 
+    Footer Section
+*/
+#footer {
+    padding: 30px;
+    margin-top: 10px;
+}
+.footer-row {
+    border-top: 1px solid green;
+    padding-top: 30px;
+}
+.footer-brand {
+    padding: 20px;
+}
+.footer-brand .footer-brand-link {
+    color: green;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 600;
+}
+.footer-list {
+    padding-left: 20px;
+}
+.footer-list-head {
+    font-size: 25px;
+    color: green;
+}
+li .footer-list-link {
+    color: green;
+    text-decoration: none;
+}
+li .footer-list-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+.footer-footer {
+    border-top: 1px solid green;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin-top: 20px;
+    color: green;
+    font-size: 21px;
+}
+@media (max-width: 451px) {
+    .footer-brand .footer-brand-link {
+        font-size: 20px;
+    }
+    .footer-list-head {
+        font-size: 16px;
+    }
+    li .footer-list-link {
+        font-size: 16px;
+    }
+    .footer-footer {
+        font-size: 16px;
+    }
+}

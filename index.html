@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbo App || Chat With Friends And Family</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Icon Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <nav class="nav-fixed">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="navbar-brand"><a href="index.html" class="navbar-brand-link">Verbo</a></div>
+                <button class="navbar-btn" id="offCanvasBtn">
+                    <i class="bi bi-twitch"></i>
+                </button>
+            </div>
+            <div class="navbar-collapse offcanvas-collapse shadow" id="navmenu">
+                <div class="black-bg"></div>
+                <!-- <div class="offcanvas-bases"> -->
+                    <div class="offcanvas-bar px-1 py-1 text-end">
+                        <button id="offCanvasBtn" class="btn btn-closer shadow" type="button">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                    <ul class="list-unstyled list-inline ms-auto">
+                        <li class="list-inline-item">
+                            <a href="" class="list-link">Log In</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="" class="list-link">Sign Up</a>
+                        </li>
+                    </ul>
+                <!-- </div> -->
+            </div>
+        </div>
+    </nav>
+    <div class="images">
+        <img src="Images/chat_img3.jpg" alt="" data-img id="img-1" class="top-section-img show">
+        <img src="Images/chat_img4.jpg" class="top-section-img" alt="" data-img id="img-2">
+    </div>
+    <section class="top-section full-screen-section">
+        <div class="left">
+            <div class="inner-text">
+                <h1>Chat With Friends Today</h1>
+                <p>You can sign up with us now and chat with your friend from anywhere in the world seemlessly without problems</p>
+                <div class="cta-area">
+                    <a href="" class="cta-link mx-1">Sign Up Now</a>
+                    <a href="" class="cta-link d-lg-none mx-1">Log In Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="new-right card-obj">
+            <img src="images/download-1 (1).svg" alt="" class="img-fluid w-50">
+        </div>
+        <div class="right">
+            <div class="login-card shadow text-center">
+                <h3><a href="">Verbo</a></h3>
+                <h3 class="text-center pb-3">Login Now</h3>
+                <form action="">
+                    <div class="join-group">
+                        <input type="text" name="email" class="input">
+                        <label for="email" class="label">Email</label>
+                    </div>
+                    <div class="join-group">
+                        <input type="password" name="password" class="input">
+                        <label for="password" class="label">Password</label>
+                    </div>
+                    <div class="button-bg">
+                        <button type="submit" name="submit">LOG IN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="full-main-section first-main-section">
+        <div class="inner-text2">
+            <h1>Completely Visual</h1>
+            <p>We offer all your resources visually to you, in order for you to access them</p>
+            <div class="pt-4">
+                <a href="" class="cta-link">START NOW</a>
+            </div>
+        </div>
+        <div data-img-to-show="#img-1"></div>
+    </section>
+    <section class="full-main-section">
+        <div class="inner-text2">
+            <h1>Fully Operational and Functional Site</h1>
+            <p>This chat application is fully functional and operational, you don't have to worry about internet services no more</p>
+            <div class="pt-4">
+                <a href="" class="cta-link">START NOW</a>
+            </div>
+        </div>
+        <div data-img-to-show="#img-2"></div>
+    </section>
+    <section data-img-end="" style="padding: 5vh;"></section>
+    <section data-img-end="" class="split-section">
+        <div class="container">
+            <div class="d-lg-flex d-block align-items-center justify-content-between text-lg-start text-center">
+                <div class="text-section-bg pe-lg-5 pe-0 card-obj">
+                    <h2>Chat With Friends Seemlessly On The Go</h2>
+                    <p>You can chat with friends with ease and make new friends without issues on <span style="color: green;">VERBO</span></p>
+                    <div class="pt-4">
+                        <a href="" class="cta-link">START NOW</a>
+                    </div>
+                </div>
+                <div class="image-section-bg mt-lg-0 mt-4 card-obj">
+                    <img src="Images/download-1.svg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section data-img-end="" class="split-section2">
+        <div class="container">
+            <div class="d-lg-flex d-block align-items-center justify-content-between text-lg-start text-center">
+                <div class="image-section-bg pe-lg-5 pe-0 card-obj">
+                    <img src="Images/download-1 (2).svg" alt="" class="img-fluid">
+                </div>
+                <div class="text-section-bg card-obj mt-lg-0 mt-4">
+                    <h2>Get Info From Friends Easily</h2>
+                    <p>You can get new info easily from friends and other people with the new channel update on <span style="color: green;">VERBO</span></p>
+                    <div class="pt-4">
+                        <a href="" class="cta-link">START NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section data-img-end="" id="footer">
+        <div class="container">
+            <div class="row footer-row">
+                <div class="col-lg-4 col-12">
+                    <div class="footer-brand"><a href="index.html" class="footer-brand-link"><i class="bi bi-twitch"></i>Verbo</a></div>
+                </div>
+                <div class="col-lg-4 col-6 footer-list">
+                    <p class="footer-list-head">What we do</p>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="footer-list-link">Features</a></li>
+                        <li><a href="" class="footer-list-link">Blogs</a></li>
+                        <li><a href="" class="footer-list-link">Security</a></li>
+                        <li><a href="" class="footer-list-link">For Business</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-6 footer-list">
+                    <p class="footer-list-head">Who we are</p>
+                    <ul class="list-unstyled">
+                        <li><a href="" class="footer-list-link">About us</a></li>
+                        <li><a href="" class="footer-list-link">Career</a></li>
+                        <li><a href="" class="footer-list-link">Brand Center</a></li>
+                        <li><a href="" class="footer-list-link">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-footer">
+                <p>2023 &copy; Verbo INC <br> Terms & Privacy Policy</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- JS Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
