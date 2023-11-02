@@ -226,7 +226,7 @@ p {
     .top-section {
         flex-direction: column;
         margin-bottom: 20px;
-        height: 90vh;
+        height: 120vh;
         overflow: hidden;
         translate: 0 calc(-1% * (max(var(--scroll), 10) - 10) * 100 / 90);
         --background-opacity: calc(-1% * (min(var(--scroll), 15) - 15) * 100 / 85);
@@ -301,15 +301,11 @@ p {
 .split-section {
     padding: 10px;
     padding-bottom: 50px;
-    height: 70vh;
     margin-bottom: 30px;
-    overflow-x: hidden;
 }
 .split-section2 {
     padding: 50px 10px;
-    height: 70vh;
     margin-bottom: 50px;
-    overflow-x: hidden;
 }
 .text-section-bg {
     padding: 10px;
